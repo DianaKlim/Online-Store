@@ -28,7 +28,7 @@ module.exports = {
         hot: true,
         static: {
             directory: path.join(__dirname, 'dist')
-        }
+        },
     },
     module: {
         rules: [
