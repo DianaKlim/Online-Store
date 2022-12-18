@@ -1,16 +1,13 @@
 //imports
 import './sass/style.scss';
-import './ts/module.ts'
+// import Page from "./ts/page";
+// import mainPage from "./ts/mainPage";
 
-//check
-interface Account {
-    id: number
-    displayName: string
-    version: 1
-  }
-   
-  function welcome(user: Account) {
-    console.log('index.ts', user.id, user.displayName)
-  }
+//------------delete example for check----------------
+import {Phone, call} from "./ts/page";
+const iphone: Phone = new Phone("iPhone X");
+call(iphone);
 
-  welcome({id: 2, displayName: 'dia', version: 1})
+import SmartWatch from "./ts/smartwatch";
+const watch: SmartWatch = new SmartWatch("Apple Watch");
+watch.printModel();

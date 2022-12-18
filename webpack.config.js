@@ -12,6 +12,9 @@ module.exports = {
         filename: '[name][contenthash].js',
         clean: true
     },
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
     optimization: {
         splitChunks: {
           chunks: "all",
@@ -43,7 +46,7 @@ module.exports = {
             {   test: /\.ts$/i,
                 use: 'ts-loader'
             }
-        ]
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
