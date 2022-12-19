@@ -9,7 +9,7 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: $color-background;
     margin: 2em 2em;
     border-radius: 9px;
@@ -18,9 +18,9 @@ body {
 }
 
 .side-section {
-    width: calc(12vw);
+    justify-content: space-around;
     margin-left: 5em;
-
+    display: flex;
 }
 
 .side-list {
@@ -30,9 +30,9 @@ body {
 .brands,
 .categories {
     background-color: $color-primary;
-    width: calc(12vw);
+    width: calc(25vw);
     height: calc(25vh);
-    margin-top: 4em;
+    margin-top: 2em;
     overflow-x: hidden;
     overflow-y: auto;
     border-radius: 10px;
@@ -42,6 +42,9 @@ body {
 p {
     color: rgb(255, 255, 255);
     margin-left: 8px;
+}
+div>p{
+    color: crimson;
 }
 
 // SLIDERS
@@ -100,12 +103,16 @@ p {
 }
 
 // PRODUCTS CONTAINER
+
+.products-hat{
+    display: flex;
+}
 .products {
     display: flex;
     flex-wrap: wrap;
     background-color: $color-background;
     border-radius: 10px;
-    margin: 10px 20px;
+    margin: 10px 70px;
 }
 
 .products>* {
