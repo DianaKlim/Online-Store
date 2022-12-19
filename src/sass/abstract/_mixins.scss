@@ -1,7 +1,13 @@
-@mixin font ($size, $height, $weight: bold) {
+@mixin font ($size, $height,$style,$color, $weight: bold) {
     font-size: $size;
     font-weight: $weight;
+    font-family: $style;
+    color: $color
 }
+
+@mixin theme($theme: rgb(48, 42, 42)) {
+    box-shadow: 0px 2px 6px $theme;
+  }
 
 @mixin columns ($width) {
     display: flex;
