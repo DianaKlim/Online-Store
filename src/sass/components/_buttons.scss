@@ -1,0 +1,17 @@
+.button {
+    padding: 2% 3%;
+    border-radius: 25px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    color: #F1F3F2;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.button:active {
+    background: $color-active;
+}
+
+.button:hover {
+    background: $color-primary;
+}

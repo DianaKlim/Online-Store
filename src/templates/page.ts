@@ -12,9 +12,9 @@ export abstract class Page {
     const headerTitle = document.createElement('div')
     headerTitle.className = 'header'
     headerTitle.innerHTML += `
-    <div>${logo}</div>
-    <div>${text}</div>
-    <img src="../src/assets/shopping_cart.png" alt="shopping cart">
+    <button class="header__button button logo">${logo}</button>
+    <button class="header__button button total-cost">${text}</button>
+    <button><img class="header__button button basket" src="../src/assets/shopping_cart.png" alt="shopping cart"></button>
     `;
     return headerTitle
   }
