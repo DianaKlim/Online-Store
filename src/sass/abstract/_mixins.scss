@@ -5,7 +5,7 @@
     color: $color
 }
 
-@mixin theme($theme: rgb(48, 42, 42)) {
+@mixin theme($theme: rgb(68, 45, 173)) {
     box-shadow: 0px 2px 6px $theme;
   }
 

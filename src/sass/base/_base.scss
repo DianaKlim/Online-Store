@@ -3,14 +3,16 @@ html {
 }
 
 body {
+    background-color: $color-background;
     @extend %font-prim;
     @include font($size: 1.6rem, $height: 2.6rem, $weight: normal, $style: "Cinzel", $color: rgb(255, 253, 253));
 }
 
 .header {
     display: flex;
-    justify-content: space-between;
-    background-color: $color-background;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $color-one;
     margin: 2em 2em;
     border-radius: 9px;
     height: 4em;
@@ -18,11 +20,12 @@ body {
 }
 
 .side-section {
-    justify-content: space-around;
     margin-left: 5em;
     display: flex;
 }
-
+.side-section-input{
+margin: 30px 10px;
+}
 .side-list {
     margin: 2px 8px;
 }
@@ -33,10 +36,15 @@ body {
     width: calc(25vw);
     height: calc(25vh);
     margin-top: 2em;
+    margin-right: 10em;
     overflow-x: hidden;
     overflow-y: auto;
     border-radius: 10px;
     @include theme;
+}
+
+.checkbox{
+    padding-left: 10px;
 }
 
 p {
@@ -56,7 +64,7 @@ div>p{
     /* Full-width */
     height: 5px;
     /* Specified height */
-    background: $color-background;
+    background: $color-one;
     /* Grey background */
     outline: none;
     /* Remove outline */
@@ -104,13 +112,20 @@ div>p{
 
 // PRODUCTS CONTAINER
 
-.products-hat{
-    display: flex;
+#select{
+    color: rgb(71, 51, 51) ;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 20px 20px;
+    width: 100%;
+    cursor: pointer;
+    line-height: inherit;
 }
 .products {
     display: flex;
     flex-wrap: wrap;
-    background-color: $color-background;
+    background-color: $color-one;
     border-radius: 10px;
     margin: 10px 70px;
 }
