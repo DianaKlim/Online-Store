@@ -1,0 +1,16 @@
+.header-container div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $color-one;
+    margin: 2em 2em;
+    border-radius: 9px;
+    height: 4em;
+    @include theme;
+}
+
+a {
+    text-decoration: none;
+    color: #FDFDFF;
+    cursor: pointer;
+}

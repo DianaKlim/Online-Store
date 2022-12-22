@@ -7,7 +7,11 @@
 
 //Base
 @import "base/base";
+@import "base/buttons";
+@import "base/scroll";
 
 // Components
-@import "components/navigation";
-@import "components/buttons";
+@import "components/header";
+@import "components/products";
+@import "components/side-section";
+@import "components/sliders";

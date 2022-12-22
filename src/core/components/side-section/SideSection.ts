@@ -1,15 +1,13 @@
-import data from '../../../templates/data.json'
-export abstract class sideSection {
-  protected sideSectionContainer: HTMLElement;
-  static TextObject = {}
-  constructor(id: string) {
-    this.sideSectionContainer = document.createElement('section')
-    this.sideSectionContainer.id = id
+import Component from '../../templates/Components';
+import data from '../../templates/data.json';
+
+class SideSection extends Component {
+  constructor(tagName:string, className:string) {
+    super(tagName, className);
   }
 
   protected createSideSection() {
     // side block with categories
-    this.sideSectionContainer.className = 'side-section'
     const sideSectionCategories = document.createElement('ul')
     sideSectionCategories.className = 'categories'
     sideSectionCategories.innerHTML += `<p>CATEGORIES</p>`
@@ -32,20 +30,26 @@ export abstract class sideSection {
       const brand = data.products[index].brand;
       if (!categories.includes(brand)) {
         sideSectionBrands.innerHTML += `
-        <li class='side-list'><label><input type="checkbox"><span class = 'checkbox'>${brand}</span></label></li>
+        <li class='side-list'>
+          <label>
+            <input type="checkbox">
+            <span class = 'checkbox'>${brand}</span>
+          </label>
+        </li>
       `;
       }
       brands.push(brand)
     }
     //  side sliders
-    const sideSectionSlidersAndFilters = document.createElement('div')
+    const sideSectionSlidersAndFilters = document.createElement('div');
+    sideSectionSlidersAndFilters.className = "side__range__container"
     sideSectionSlidersAndFilters.innerHTML += `
-    <div>
-    <p>Price</p>
-    <input type="range" min="1" max="100" value="50" class = 'slider-container-price'  id="myRange">
-    <p>Stock</p>
-    <input type="range" min="1" max="100" value="50" class='slider-container-stock'  id="myRange">
-    </div>
+    <div class = "range__container">
+      <p>Price</p>
+      <input type="range" min="1" max="100" value="50" class = 'slider-container-price'  id="myRange">
+      <p>Stock</p>
+      <input type="range" min="1" max="100" value="50" class='slider-container-stock'  id="myRange">
+      </div>
     <div>
     <input class='side-section-input' type="text">
       <select  id='select'>
@@ -58,12 +62,16 @@ export abstract class sideSection {
       </select>
       </div>
     `
-  
-    return [sideSectionCategories, sideSectionBrands,sideSectionSlidersAndFilters ]
+    this.container.append(sideSectionCategories);
+    this.container.append(sideSectionBrands);
+    this.container.append(sideSectionSlidersAndFilters);
+    // return [sideSectionCategories, sideSectionBrands,sideSectionSlidersAndFilters ]
   }
 
   render() {
-    return (this.sideSectionContainer)
+    this.createSideSection();
+    return this.container
   }
-
 }
+
+export default SideSection;

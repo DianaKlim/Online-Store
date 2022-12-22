@@ -1,0 +1,42 @@
+.side__range__container {
+    width: 25vh;
+}
+
+.side-container {
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+}
+
+.side-section-input{
+    margin: 30px 10px;
+}
+
+.side-list {
+    margin: 2px 8px;
+}
+
+.brands,
+.categories {
+    flex-shrink: 0;
+    background-color: $color-primary;
+    width: calc(25vw);
+    height: calc(25vh);
+    margin-top: 2em;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 10px;
+    @include theme;
+}
+
+.checkbox{
+    padding-left: 10px;
+}
+
+p {
+    color: rgb(255, 255, 255);
+    margin-left: 8px;
+}
+div>p{
+    color: crimson;
+}

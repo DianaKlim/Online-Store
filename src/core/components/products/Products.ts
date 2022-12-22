@@ -1,9 +1,9 @@
-import data from '../../../templates/data.json'
-export abstract class productsDisplay {
-  protected productsContainer: HTMLElement;
-  constructor(id: string) {
-    this.productsContainer = document.createElement('section')
-    this.productsContainer.id = id
+import Component from '../../templates/Components';
+import data from '../../templates/data.json';
+
+class Products extends Component {
+  constructor(tagName:string, className:string) {
+    super(tagName, className);
   }
 
   protected createProductsDisplay() {
@@ -28,10 +28,14 @@ export abstract class productsDisplay {
     </div>
          `;
     }
-    return productsDivs
+
+    this.container.append(productsDivs);
   }
 
   render() {
-    return (this.productsContainer)
+    this.createProductsDisplay();
+    return this.container
   }
 }
+
+export default Products;
