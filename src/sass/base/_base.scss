@@ -3,6 +3,154 @@ html {
 }
 
 body {
+    background-color: $color-background;
     @extend %font-prim;
-    @include font($size: 1.6rem, $height: 2.6rem, $weight: normal);
+    @include font($size: 1.6rem, $height: 2.6rem, $weight: normal, $style: "Cinzel", $color: rgb(255, 253, 253));
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $color-one;
+    margin: 2em 2em;
+    border-radius: 9px;
+    height: 4em;
+    @include theme;
+}
+
+.side-section {
+    margin-left: 5em;
+    display: flex;
+}
+.side-section-input{
+margin: 30px 10px;
+}
+.side-list {
+    margin: 2px 8px;
+}
+
+.brands,
+.categories {
+    background-color: $color-primary;
+    width: calc(25vw);
+    height: calc(25vh);
+    margin-top: 2em;
+    margin-right: 10em;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 10px;
+    @include theme;
+}
+
+.checkbox{
+    padding-left: 10px;
+}
+
+p {
+    color: rgb(255, 255, 255);
+    margin-left: 8px;
+}
+div>p{
+    color: crimson;
+}
+
+// SLIDERS
+.slider-container-price,
+.slider-container-stock {
+    width: 100%;
+    appearance: none;
+    width: 100%;
+    /* Full-width */
+    height: 5px;
+    /* Specified height */
+    background: $color-one;
+    /* Grey background */
+    outline: none;
+    /* Remove outline */
+    opacity: 0.7;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    @include theme;
+}
+
+.slider-container-price::-webkit-slider-thumb,
+.slider-container-stock::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    border-radius: 50%;
+    /* Slider handle height */
+    background: $color-primary;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+// SROLL
+.categories::-webkit-scrollbar,
+.brands::-webkit-scrollbar {
+    width: 8px;
+}
+
+.categories::-webkit-scrollbar-track,
+.brands::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.categories::-webkit-scrollbar-thumb,
+.brands::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 10px white;
+}
+
+// PRODUCTS CONTAINER
+
+#select{
+    color: rgb(71, 51, 51) ;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 20px 20px;
+    width: 100%;
+    cursor: pointer;
+    line-height: inherit;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $color-one;
+    border-radius: 10px;
+    margin: 10px 70px;
+}
+
+.products>* {
+    flex: 200px;
+    margin: 15px;
+    background-repeat: none;
+    background-size: cover;
+}
+
+.product-card {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    margin: 20px 20px;
+    border-radius: 8px;
+}
+
+.product-btn {
+    background-color: $color-primary;
+    border-radius: 5px;
+    border: none;
+}
+
+.product-description {
+    background-color: rgb(86, 136, 230);
+    opacity: 0.5;
 }
