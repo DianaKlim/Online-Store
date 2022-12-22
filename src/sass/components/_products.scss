@@ -1,0 +1,42 @@
+#select{
+    color: rgb(71, 51, 51) ;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 20px 20px;
+    width: 100%;
+    cursor: pointer;
+    line-height: inherit;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $color-one;
+    border-radius: 10px;
+    margin: 10px 70px;
+}
+
+.products>* {
+    flex: 200px;
+    margin: 15px;
+    background-repeat: none;
+    background-size: cover;
+}
+
+.product-card {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    margin: 20px 20px;
+    border-radius: 8px;
+}
+
+.product-btn {
+    background-color: $color-primary;
+    border-radius: 5px;
+    border: none;
+}
+
+.product-description {
+    background-color: rgb(86, 136, 230);
+    opacity: 0.5;
+}
