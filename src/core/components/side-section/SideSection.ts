@@ -2,7 +2,7 @@ import Component from '../../templates/Components';
 import data from '../../templates/data.json';
 
 class SideSection extends Component {
-  constructor(tagName:string, className:string) {
+  constructor(tagName: string, className: string) {
     super(tagName, className);
   }
 
@@ -16,29 +16,36 @@ class SideSection extends Component {
       const category = data.products[index].category;
       if (!categories.includes(category)) {
         sideSectionCategories.innerHTML += `
-        <li class='side-list'><label><input type="checkbox"><span class='checkbox'>${category}</span></label></li>
+        <li id="category" class='side-list'>
+        <label><input value=${category} type="checkbox">
+        <span class='checkbox'>${category}</span>
+        </label>
+        </li>
       `;
+        categories.push(category)
       }
-      categories.push(category)
+
     }
     // side block with brands
     const sideSectionBrands = document.createElement('ul')
     sideSectionBrands.className = 'brands'
+    sideSectionBrands.id = 'brands'
     sideSectionBrands.innerHTML += `<p>BRANDS</p>`
     const brands: string[] = []
     for (let index = 0; index < data.products.length; index++) {
       const brand = data.products[index].brand;
-      if (!categories.includes(brand)) {
+      if (!brands.includes(brand)) {
         sideSectionBrands.innerHTML += `
-        <li class='side-list'>
+        <li id='brand' class='side-list'>
           <label>
-            <input type="checkbox">
-            <span class = 'checkbox'>${brand}</span>
+            <input value = ${brand} type="checkbox">
+            <span  class ='checkbox'>${brand}</span>
           </label>
         </li>
       `;
-      }
       brands.push(brand)
+      }
+      
     }
     //  side sliders
     const sideSectionSlidersAndFilters = document.createElement('div');
