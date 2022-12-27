@@ -10,6 +10,7 @@ class Products extends Component {
     // all products
     const productsDivs = document.createElement('div')
     productsDivs.className = 'products'
+    productsDivs.id = 'products'
     for (let index = 0; index < data.products.length; index++) {
       productsDivs.innerHTML += `
         <div style="background-image: url('${data.products[index].thumbnail}')" class="product-card">
